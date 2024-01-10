@@ -20,17 +20,16 @@ function clean(cb) {
 function css(cb) {
   return src('./packages/**/*.less')
         .pipe(less())
-        .pipe(uglify())
-        .pipe(postcss())
+        // .pipe(postcss())
         .pipe(concat('curse.css'))
         .pipe(dest('./dist'))
-        .pipe(uglify())
+        // .pipe(uglify())
         .pipe(rename({ extname: '.min.css' }))
         .pipe(dest('./dist'));
 }
 
 function javascript(cb) {
-  return src('./packages/*.js')
+  return src('./packages/**/*.js')
         .pipe(babel())
         .pipe(concat('curse.js'))
         .pipe(dest('./dist'))
