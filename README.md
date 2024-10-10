@@ -1,2 +1,2 @@
-# curse.js
-micro style lib
+# persona.js
+A Webcomponent Lib
